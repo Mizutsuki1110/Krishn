@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thank You Krishna | By Anuj</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:white;
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(rgba(5,10,25,0.75),rgba(5,10,25,0.85)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+/* glowing effects */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:350px;
+    height:350px;
+    background:#5b8cff;
+    border-radius:50%;
+    top:-120px;
+    left:-120px;
+    filter:blur(90px);
+    opacity:0.4;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:350px;
+    height:350px;
+    background:#ff9f43;
+    border-radius:50%;
+    bottom:-120px;
+    right:-120px;
+    filter:blur(90px);
+    opacity:0.4;
+    z-index:-1;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 60px;
+
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+
+    z-index:1000;
+}
+
+.logo{
+    font-family:'Cinzel',serif;
+    font-size:1.7rem;
+    color:#ffd89b;
+    letter-spacing:2px;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ffb347;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    padding:120px 20px 80px;
+}
+
+.hero-box{
+
+    width:90%;
+    max-width:950px;
+
+    padding:70px 50px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 0 30px rgba(0,0,0,0.4),
+    0 0 60px rgba(91,140,255,0.2);
+
+    animation:fadeIn 1.5s ease;
+}
+
+.hero h1{
+    font-size:4rem;
+    font-family:'Cinzel',serif;
+    margin-bottom:25px;
+    letter-spacing:3px;
+}
+
+.hero span{
+    color:#ffbf69;
+}
+
+.line{
+    width:120px;
+    height:3px;
+
+    background:linear-gradient(to right,#ff9f43,#5b8cff);
+
+    margin:30px auto;
+    border-radius:10px;
+}
+
+.hero p{
+    line-height:2;
+    font-size:1.1rem;
+    color:#f1f1f1;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+
+    padding:14px 35px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+    color:white;
+
+    background:linear-gradient(45deg,#ff9f43,#5b8cff);
+
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px rgba(255,255,255,0.25);
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    padding:120px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.8rem;
+    font-family:'Cinzel',serif;
+}
+
+.section-title p{
+    margin-top:10px;
+    color:#ddd;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+.card{
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    transition:0.5s;
+
+    backdrop-filter:blur(12px);
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:30px;
+}
+
+.card-content h3{
+    color:#ffd89b;
+    margin-bottom:15px;
+    font-size:1.4rem;
+}
+
+.card-content p{
+    line-height:1.9;
+    color:#f1f1f1;
+}
+
+/* =========================
+   QUOTE SECTION
+========================= */
+
+.quote-section{
+    padding:120px 8%;
+}
+
+.quote-box{
+
+    max-width:950px;
+    margin:auto;
+
+    padding:70px 50px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.quote-box h2{
+    font-size:3rem;
+    font-family:'Cinzel',serif;
+}
+
+.quote-box p{
+    margin-top:30px;
+    line-height:2.1;
+    color:#f1f1f1;
+    font-size:1.05rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    background:rgba(0,0,0,0.3);
+
+    margin-top:70px;
+}
+
+.footer-name{
+
+    margin-top:20px;
+
+    font-family:'Cinzel',serif;
+
+    font-size:1.6rem;
+
+    color:#ffbf69;
+
+    letter-spacing:4px;
+
+    text-shadow:0 0 15px rgba(255,191,105,0.5);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    nav{
+        padding:18px 25px;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .hero-box{
+        padding:50px 25px;
+    }
+
+    .section{
+        padding:100px 7%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">KRISHNA</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#blessings">Blessings</a></li>
+<li><a href="#gratitude">Gratitude</a></li>
+<li><a href="#journey">Journey</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-box">
+
+<h1>Thank You <span>Krishna</span></h1>
+
+<div class="line"></div>
+
+<p>
+
+Thank you Krishna for being my strength during difficult times,
+my peace during restless nights,
+and my hope whenever life felt uncertain.
+
+<br><br>
+
+You silently protect me,
+guide me,
+and bless me in ways I may never fully understand.
+
+<br><br>
+
+Thank you for every beautiful memory,
+every lesson,
+every opportunity,
+and every person who truly cares for me.
+
+<br><br>
+
+Some blessings come quietly through friendship,
+kindness,
+love,
+and support —
+and I believe they are all gifts from you.
+
+</p>
+
+<a href="#blessings" class="btn">Explore Blessings</a>
+
+</div>
+
+</section>
+
+<!-- SECTION 2 -->
+
+<section class="section" id="blessings">
+
+<div class="section-title">
+
+<h2>Your Beautiful Blessings</h2>
+
+<p>Every moment carries your silent grace.</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Peace In Difficult Times</h3>
+
+<p>
+Whenever life becomes stressful and confusing,
+your calmness reminds me to stay strong.
+You teach me patience,
+faith,
+and inner peace.
+</p>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Gift Of Friendship</h3>
+
+<p>
+Thank you for giving me genuine people
+who understand me,
+support me,
+and stay beside me through every emotion and challenge.
+</p>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Hope & Courage</h3>
+
+<p>
+Even during dark moments,
+your blessings give me courage to continue.
+You remind me that every difficult chapter
+leads toward something beautiful.
+</p>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- GRATITUDE SECTION -->
+
+<section class="quote-section" id="gratitude">
+
+<div class="quote-box">
+
+<h2>Forever Grateful</h2>
+
+<div class="line"></div>
+
+<p>
+
+Thank you Krishna for listening to every silent prayer hidden inside my heart.
+
+<br><br>
+
+Thank you for understanding emotions
+that words could never explain.
+
+<br><br>
+
+Thank you for every peaceful night,
+every smile,
+every unforgettable memory,
+and every lesson life has taught me.
+
+<br><br>
+
+Even when life feels complicated,
+your presence gives me comfort,
+hope,
+and strength to move forward.
+
+<br><br>
+
+I may never express my gratitude perfectly,
+but I will always remain thankful for your kindness,
+your protection,
+and your blessings.
+
+</p>
+
+<a href="#" class="btn">Stay Blessed ✨</a>
+
+</div>
+
+</section>
+
+<!-- JOURNEY SECTION -->
+
+<section class="section" id="journey">
+
+<div class="section-title">
+
+<h2>A Journey Of Faith</h2>
+
+<p>Faith turns difficult roads into meaningful journeys.</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Beautiful Memories</h3>
+
+<p>
+Some moments become priceless
+because they carry emotions,
+peace,
+love,
+and unforgettable memories.
+</p>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1493246318656-5bfd4cfb29b8?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Silent Connection</h3>
+
+<p>
+Even without speaking,
+you understand every fear,
+every emotion,
+and every hidden feeling inside my heart.
+</p>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Light In Darkness</h3>
+
+<p>
+When everything feels uncertain,
+your guidance becomes the light
+that helps me move forward with hope.
+</p>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div>
+Made With Gratitude • Designed With Peace & Emotions ✨
+</div>
+
+<div class="footer-name">
+&mdash; ANUJ &mdash;
+</div>
+
+</footer>
+
+</body>
+</html>
